@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); /* Handwritten Font */
+
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffb6c1; /* Soft pink background */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff3366;
+            font-size: 2.5em;
+        }
+        .cat-img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff3366;
+            color: white;
+        }
+        .yes:hover {
+            background-color: #ff6699;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+            position: absolute;
+        }
+        /* Stylish Love Letter */
+        .letter {
+            display: none;
+            margin-top: 30px;
+            background: #fff5f8; /* Light pinkish parchment */
+            padding: 25px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Dancing Script', cursive; /* Romantic Font */
+            font-size: 1.5em;
+            color: #b3003b;
+            border: 2px solid #ff3366;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        /* Heart Decorations */
+        .letter::before, .letter::after {
+            content: "❤️";
+            font-size: 30px;
+            position: absolute;
+        }
+        .letter::before {
+            left: 10px;
+            top: 10px;
+        }
+        .letter::after {
+            right: 10px;
+            bottom: 10px;
+        }
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="download.jpeg" alt="Cute Cat" class="cat-img">  
+        <h1>Will You Be My Valentine? 💕</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showLetter()">Yes</button>
+            <button class="no" onmouseover="moveButton()">No</button>
+        </div>
+
+        <!-- Love Letter -->
+        <div class="letter" id="loveLetter">
+            <h2>Dear Valentine, 💌</h2>
+            <p>
+                You make my world brighter, my days happier, and my heart fuller.  
+                I’m so lucky to have you in my life! Thank you for being amazing.  
+                I can't wait to spend this special day with you! 💖  
+            </p>
+            <p>With all my love,</p>
+            <h3>💞 Your Secret Admirer 💞</h3>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 150);
+            let y = Math.random() * (window.innerHeight - 150);
+            document.querySelector('.no').style.left = `${x}px`;
+            document.querySelector('.no').style.top = `${y}px`;
+        }
+
+        function showLetter() {
+            document.getElementById('loveLetter').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
